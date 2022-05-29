@@ -17,8 +17,8 @@ data_dir = pathlib.Path(data_dir)
 image_count = len(list(data_dir.glob('*/*.jpg')))
 print(image_count)
 
-roses = list(data_dir.glob('roses/*'))
-PIL.Image.open(str(roses[0]))
+# roses = list(data_dir.glob('roses/*'))
+# PIL.Image.open(str(roses[0]))
 
 batch_size = 32
 img_height = 180
