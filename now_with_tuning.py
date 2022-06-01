@@ -1,12 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-import os
-# from sklearn.model_selection import KFold StratifiedKFold
 import tensorflow as tf
 import pathlib
 import keras
-from tensorflow.keras.models import Sequential
+#from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 import keras_tuner as kt
 
@@ -38,13 +34,13 @@ data_augmentation = keras.Sequential(
     ]
 )
 
-plt.figure(figsize=(10, 10))
-for images, _ in train_ds.take(1):
-    for i in range(9):
-        augmented_images = data_augmentation(images)
-        ax = plt.subplot(3, 3, i + 1)
-        plt.imshow(augmented_images[0].numpy().astype("uint8"))
-        plt.axis("off")
+# plt.figure(figsize=(10, 10))
+# for images, _ in train_ds.take(1):
+#     for i in range(9):
+#         augmented_images = data_augmentation(images)
+#         ax = plt.subplot(3, 3, i + 1)
+#         plt.imshow(augmented_images[0].numpy().astype("uint8"))
+#         plt.axis("off")
 
 val_ds = tf.keras.utils.image_dataset_from_directory(
     data_dir,
